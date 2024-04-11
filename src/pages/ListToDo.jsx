@@ -1,4 +1,6 @@
+import React from "react";
 import { useToDos } from "../contexts/ToDoContext";
+import moment from "moment";
 
 export const ListToDo = () => {
   const { todos, toggleToDo } = useToDos();
@@ -6,9 +8,6 @@ export const ListToDo = () => {
   return (
     <div>
       <h1>All</h1>
-      <p>
-        {todos.length} {todos.length === 1 ? "task" : "tasks"}
-      </p>
       <div>
         {todos.map((todo, index) => (
           <div key={index}>
@@ -20,10 +19,14 @@ export const ListToDo = () => {
               }}
             />
             <label
-              className={`${todo.completed} ? "text-gray-400 line-through" : "text-black"`}
+              className={
+                todo.completed ? "text-gray-400 line-through" : "text-black"
+              }
             >
               {todo.text}
             </label>
+            <span> - {moment(todo.time).format("hh:mm A")}</span>{" "}
+
           </div>
         ))}
       </div>

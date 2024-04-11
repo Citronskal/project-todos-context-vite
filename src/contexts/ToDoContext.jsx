@@ -1,12 +1,19 @@
 import { createContext, useContext, useState } from "react";
 
+
 const ToDoContext = createContext();
 
 export const ToDoProvider = ({ children }) => {
   const [todos, setTodos] = useState([]);
 
   const addToDo = (text, date, category) => {
-    const newToDo = { text, completed: false, date, category };
+    const newToDo = {
+      text,
+      completed: false,
+      date,
+      category,
+      time: new Date(),
+    };
     setTodos([...todos, newToDo]);
   };
 
