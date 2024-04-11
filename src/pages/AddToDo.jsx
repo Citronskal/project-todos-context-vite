@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { useToDos } from "../ToDoContext";
-import moment from "moment"; 
+import { useToDos } from "../contexts/ToDoContext";
+import moment from "moment";
 
 export const AddToDo = () => {
   const [text, setText] = useState("");
@@ -15,7 +15,7 @@ export const AddToDo = () => {
     // Format the date using moment.js
     const formattedDate = moment(date).format("YYYY-MM-DD");
 
-    addToDo(text, formattedDate, category); 
+    addToDo(text, formattedDate, category);
     setText("");
     setDate("");
     setCategory("");

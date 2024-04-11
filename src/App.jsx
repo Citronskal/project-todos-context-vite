@@ -1,5 +1,5 @@
 import { AddToDo } from "./pages/AddToDo";
-import { ToDoProvider } from "./ToDoContext";
+import { ToDoProvider } from "./contexts/ToDoContext";
 import { ListToDo } from "./pages/ListToDo";
 
 export const App = () => {
